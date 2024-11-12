@@ -1,0 +1,16 @@
+<div class="container">
+  <h1><%= @pet.name %></h1>
+  <p><%= @pet.location %></p>
+  <p><%= @pet.species %></p>
+  <p><%= @pet.found_on.strftime('%A, %b %d') %></p>
+  <%= link_to pets_path, class: 'btn btn-light' do %>
+    <i class="fa-solid fa-shield-dog"></i>
+  <% end %>
+  <%= link_to edit_pet_path(@pet), class: 'btn btn-light' do %>
+    <i class="fa-solid fa-pencil"></i>
+  <% end %>
+  <%= link_to pet_path(@pet), class: 'btn btn-light', data: { turbo_method: :delete, turbo_confirm: "Release #{@pet.name}?" } do %>
+    <i class="fa-solid fa-door-open"></i>
+  <% end %>
+
+</div>

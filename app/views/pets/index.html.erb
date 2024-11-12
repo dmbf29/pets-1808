@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="d-flex justify-content-between align-items-end">
+    <h1>Found Pets</h1>
+    <%= link_to new_pet_path, class: 'text-decoration-none text-dark' do %>
+      <i class="fa-solid fa-square-plus"></i>
+    <% end %>
+  </div>
+  <div class="cards">
+    <% @pets.each do |pet| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://loremflickr.com/320/200/animal,<%= pet.species %>/all?lock=<%= pet.id %>);">
+      <%= link_to pet.name, pet_path(pet), class: 'text-decoration-none text-white' %>
+    </div>
+    <% end %>
+  </div>
+</div>
